@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<style type="text/css">
+			/* .detailtab {border: 1px solid #000;background-color: #ccc;} */
+			
+			#div_detail{width: 900px; margin: 10px 10px 10px 20px;}
+			#btn_index {margin: 0 0 9px 0;}
+			/* 标签头 */
+			.detailtab {border: 1px solid #43B0DA; background-color: #BED5F3; margin: 5px 0 5px 0; font-weight: bold; font-size: 17px;}
+			.label_div{height: 600px;overflow: auto;}
+			/* 简介 */
+			#div_summary {border: 1px solid #000;margin-bottom: 3px;}
+			/* 主图片 */
+			#img_view {width: 200px;height: 150px;border: 1px solid #000;}
+			/* 宣传图 */
+			#div_campaigns img{width: 150px;height: 150px;border: 1px solid #000;margin: 5px 5px 0 0;} 
+			/* 情景体验  */
+			#div_productSences img{width: 150px;height: 150px;border: 1px solid #000;margin: 5px 5px 0 0;} 
+		</style>
+	</head>
+	<div id="div_detail">
+		<div>
+			<input id="btn_back_index" class='l-button' type="button" value="返回首页" />
+		</div>
+		<div>
+			<div class="detailtab">基础信息</div>
+			<div>
+				<table>
+					<tr>
+						<td>名称：</td>
+						<td th:text="${terminal.shortTitle}">三星Galaxy S4</td>
+					</tr>
+					<tr>
+						<td>长标题：</td>
+						<td th:text="${terminal.longTitle}">大屏，8核， 高清</td>
+					</tr>
+					<tr>
+						<td>品牌：</td>
+						<td th:text="${terminal.brand.code}">三星</td>
+					</tr>
+					<tr>
+						<td>价格：</td>
+						<td th:text="${terminal.price}">4999</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: baseline;">简介：</td>
+						<td >
+							<div id="div_summary"></div>
+						</td>
+					</tr>
+				</table>
+				<input id="hide_summary" type="hidden" th:value="${terminal.summary}" />
+			</div>
+		</div>
+		<div>
+			<div class="detailtab">智惠机图片</div>
+			<div>
+				<img id="img_view" th:if="${terminal.showDistinctUrl != null and terminal.showDistinctUrl != '' }" th:src="@{${terminal.showDistinctUrl}}" />
+			</div>
+		</div>
+		<div>
+			<div class="detailtab">标签内容</div>
+			<div id="div_label_show">
+				<ul>
+					<li th:each="labelFun, iterStat : ${terminal.labelFuns}">
+						<a th:href="${'#div_label-' + iterStat.index}" th:text="${labelFun.label.name}"></a>
+					</li>
+				</ul>
+				<div class="label_div" name="contentShow" th:each="labelFun, iterStat : ${terminal.labelFuns}" th:id="${'div_label-' + iterStat.index}" th:text="${labelFun.contentShow}"></div>
+			</div>
+		</div>
+	</div>
+	<input id="hide_id" type="hidden" th:value="${terminal.id}" />
+	<script type="text/javascript"
+		src="../../../../static/javascript/mobile/advert.js"
+		th:src="@{/javascript/mobile/terminalDetail.js}"></script>
+</html>

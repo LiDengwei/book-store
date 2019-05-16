@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerForm.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+
+    <script src="/static/js/official/queryOfficialWebListEN.js" type="text/javascript"></script>
+</head>
+<body style="padding:6px; overflow:hidden;">
+<div id="searchbar" style="margin-bottom: 10px;">
+    <div style="float: left;">
+        id：<input type="text" name="id" id="id" style="margin-right: 10px;width:70px"/>
+    </div>
+
+    <div style="float: left;">
+        Platform Number：<input type="text"  id="terrace" style="margin-right: 10px;"/>
+    </div>
+
+    <div style="float: left;">
+        Add People：<input type="text"  id="userName" style="margin-right: 10px;"/>
+    </div>
+
+    <div style="float: left;">
+        <div style="float: left;margin-left: 10px;">
+            Status：
+        </div>
+        <div style="float: left;">
+            <!--<input type="text"  id="status"/>-->
+            <select id="status" name="status">
+                <option value="" >All</option>
+                <option value="1" >Employ</option>
+                <option value="2" >Unused</option>
+            </select>
+        </div>
+
+        <div style="float: left;margin-left: 10px;">
+            Language：
+        </div>
+        <div style="float: left">
+            <!--<input type="text"  id="language"/>-->
+            <select id="language" name="language">
+                <option value="" >All</option>
+                <option value="1" >Chinese</option>
+                <option value="2" >English</option>
+            </select>
+        </div>
+    </div>
+
+    <br/> <br/>
+
+    <div style="float: left;">
+        <input id="startDateStr" name="startDateStr" type="text"  class="ui-datepicker" value=""  />
+    </div>
+    <div style="float: left;">
+        <input id="endDateStr" name="endDateStr" type="text"  class="ui-datepicker" value=""  />
+    </div>
+    <div style="float: left;margin-left: 10px;">
+        <input id="btnOK" type="button" value="Query"/>
+    </div>
+
+</div>
+
+<div class="l-clear"></div>
+
+<div id="maingrid4" style="margin:0; padding:0"></div>
+
+<div id="form" style="display: none"></div>
+
+</body>
+
+</html>
+

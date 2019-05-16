@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="service-impl"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址-->
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" />
+
+    <!-- 使用zookeeper注册中心暴露服务地址  仅供本地测试配置  只订阅
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" register="false"/>
+-->
+
+
+    <!-- 用dubbo协议在20882端口暴露服务 kryo序列化 将需要序列化的类添加到 SerializationOptimizerImpl中-->
+    <dubbo:protocol name="dubbo" port="20810" payload="11557050" />
+
+    <!-- 监控中心配置，protocol="registry"，表示从注册中心发现监控中心地址 -->
+    <!--<dubbo:monitor protocol="registry" />-->
+
+    <!-- 当ProtocolConfig和ServiceConfig某属性没有配置时,采用此缺省值 -->
+    <dubbo:provider timeout="30000" threadpool="fixed" threads="1500" accepts="15000" />
+
+    <!-- 和本地bean一样实现服务 声明需要暴露的服务接口-->
+    <!-- wallet钱包所有服务接口 -->
+
+
+    <!--<dubbo:service retries="0" interface="com.book.service.api.user.UserServiceApi" ref="userServiceApi" protocol="dubbo"/>-->
+</beans>

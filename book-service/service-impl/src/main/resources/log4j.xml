@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+
+    <appender name="FILE-ALL" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/service-impl-all.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+    <appender name="FILE-ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/service-impl-error.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+        </filter>
+    </appender>
+
+    <appender name="REWARD_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/reward/reward.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+    <appender name="COMMENT_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/comment/service-comment.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+    <appender name="FOLLOW_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/follow/service-follow.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+    <appender name="MESSAGE_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/system/service-message.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 用户注册模块日志 -->
+    <appender name="REGISTER_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/register.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!--登录模块日志-->
+    <appender name="LOGIN_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/login-log.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 小模块相关记录日志 -->
+    <appender name="OTHER_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/other.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 验证码发送和校验的记录日志 -->
+    <appender name="VERIFY_CODE_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/verifyCodeLogger.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 用户信息修改日志 -->
+    <appender name="UPDATE_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/update.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+    <!-- 认证日志 -->
+    <appender name="CERTIFICATION_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/certification.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 修改认证日志 -->
+    <appender name="UPDATE_CERTIFICATION_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/user/updateCertification.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+
+
+    <!-- 世界消息日志 -->
+    <appender name="WORLD_MESSAGE_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/world/worldMessage.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+
+
+    <!-- 世界加群日志 -->
+    <appender name="WORLD_GROUP_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/world/worldGroup.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+
+    <!-- 环信操作日志 -->
+    <appender name="EASEMOB_SERVICE_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/easemob/easemobService.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <!-- 未读视频查询日志 -->
+    <appender name="RECOMMEND_VIDEO_LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/video/recommendVideoService.log" />
+        <param name="Append" value="true" />
+        <param name="Encoding" value="UTF-8" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} %5p %c{1} [%L]-%m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <logger name="rewardLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="REWARD_LOG" />
+    </logger>
+
+    <logger name="certificationLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="CERTIFICATION_LOG" />
+    </logger>
+
+    <logger name="commentLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="COMMENT_LOG" />
+    </logger>
+
+    <logger name="followLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="FOLLOW_LOG" />
+    </logger>
+
+    <logger name="messageLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="MESSAGE_LOG" />
+    </logger>
+
+    <!-- 用户注册模块日志 -->
+    <logger name="registerLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="REGISTER_LOG" />
+    </logger>
+
+    <!-- 登录模块日志 -->
+    <logger name="loginLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="LOGIN_LOG" />
+    </logger>
+
+    <!-- 小模块相关记录日志 -->
+    <logger name="otherLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="OTHER_LOG" />
+    </logger>
+
+    <!-- 验证码发送和校验的记录日志 -->
+    <logger name="verifyCodeLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="VERIFY_CODE_LOG" />
+    </logger>
+
+    <!-- 用户信息修改日志 -->
+    <logger name="updateLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="UPDATE_LOG" />
+    </logger>
+
+    <!-- 用户信息修改日志 -->
+    <logger name="updateCertificationLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="UPDATE_CERTIFICATION_LOG" />
+    </logger>
+
+    <!-- 世界消息处理日志 -->
+    <logger name="worldMessageServiceLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="WORLD_MESSAGE_LOG" />
+    </logger>
+    <!-- 世界用户加群日志 -->
+    <logger name="worldGroupServiceLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="WORLD_GROUP_LOG" />
+    </logger>
+    <!-- 环信操作日志 -->
+    <logger name="easemobServiceApiLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="EASEMOB_SERVICE_LOG" />
+    </logger>
+
+    <!-- 未读视频查询日志 -->
+    <logger name="recommendVideoLogger" additivity="false">
+        <level value="info" />
+        <appender-ref ref="RECOMMEND_VIDEO_LOG" />
+    </logger>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <root>
+        <priority value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE-ALL"/>
+        <appender-ref ref="FILE-ERROR"/>
+    </root>
+
+</log4j:configuration>

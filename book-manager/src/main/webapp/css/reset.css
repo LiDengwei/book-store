@@ -1,0 +1,152 @@
+@charset"utf-8";
+/*****Reset*****/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;word-wrap:break-word; word-break:break-all;font-size: 14px;font-family:"Microsoft YaHei", Arial, "宋体", "Segoe UI", sans-serif;vertical-align: baseline; background: transparent;}
+table th,table td{ font-size:12px; line-height:30px;}
+ol, ul,dl,li,dd,dt{list-style-type:none;}
+select,option{font-size: 14px;font-family:"Microsoft YaHei", Arial, "宋体", "Segoe UI", sans-serif;}
+select,input[type="text"]{background:url(../images/sprint.gif) repeat-x left -673px;vertical-align:middle; height:23px; line-height:23px; border:1px solid #bbb;}
+select{ height:29px; line-height:29px;}
+html,body {background:#ececec;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+/* Link style */
+a {text-decoration:none; cursor:pointer;color:#1b4885;outline-color:-moz-use-text-color;outline-style:none;outline-width:0;text-decoration:none;-moz-outline:none;outline:none;ie-dummy:expression(this.hideFocus=true);}
+a:hover {text-decoration:underline; color:#1862c7;}
+h4{padding:8px 0;font-size:15px;color:#55A34A}
+table{border-collapse:collsapse;margin-bottom:10px;}
+table td,table th{line-height:25px;}
+table th{font-weight:normal;text-align:right;padding-right:10px;}
+
+/*****css3.0 style begin*****/
+.fshadow{text-shadow:0px 1px 0px #fff;}
+.fbshadow{text-shadow:0px 1px 0px #777;}
+.shadow{-webkit-box-shadow:2px 2px 4px #555;-moz-box-shadow:2px 2px 4px #555;box-shadow:2px 2px 4px #555;}
+.boxshadow{-webkit-box-shadow: -10px -3px 4px #555;-moz-box-shadow: -10px -3px 4px #555;box-shadow:-10px -3px 4px #555;}
+.leftshadow{-webkit-box-shadow: 0px 0px 5px #bbb;-moz-box-shadow: 0px 0px 5px #bbb;box-shadow: 0px 0px 5px #bbb;}
+.leftradius,.radius{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
+.leftradius{ border-radius:0 4px 4px 0;}
+.topradius{-moz-border-radius:4px;-moz-border-radius-bottomleft:0px;-moz-border-radius-bottomright:0px;-webkit-border-radius:4px;-webkit-border-bottom-left-radius:0px;-webkit-border-bottom-right-radius:0px;border-radius:4px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;}
+.bradius{-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;}
+/*****css3.0 style end*****/
+
+/*input text style*/
+.textstyle,.textshort,.redborder,.textfont,.textlo{height:23px;color:#404040;padding:2px;background:url(../images/sprint.gif) repeat-x left -673px;vertical-align:middle;}
+.textstyle,.textshort,.redborder,.textlo{font:500 14px/24px "Microsoft YaHei", Arial, "宋体", "Segoe UI", sans-serif;}
+.textstyle,.textfont{width:254px;border:1px solid #c0c0c0;}
+.textstyle2{width:180px;}
+.textstyle_indent{margin-left:25px;}
+.textfont,.textpage{font:100 14px/23px "Microsoft YaHei", Arial, "宋体", "Segoe UI", sans-serif;}
+.textshort{width:114px; border:1px solid #c0c0c0;}
+.textpage{width:40px;height:18px;line-height:18px;border:1px solid #c0c0c0;background:url(../images/sprint.gif) repeat-x left -673px;}
+.textlo{border:1px solid #c0c0c0;}
+.redborder{border:1px solid #fa2942;}
+.yellowborder{border:1px solid #ffea00;}
+textarea{width:400px;height:60px;background:#fff url(../images/sprint.gif) repeat-x left -673px;border:1px solid #c0c0c0;}
+
+/*button  style*/
+a.but,a.but:hover{background:url(../images/sprint.gif) no-repeat;height:32px;line-height:30px;text-decoration:none;color:#fff;}
+	a.but{background-position:right -66px;float:left;text-decoration:none;}
+	a.but:hover{background-position:right -98px;}
+	a.but span,a.but:hover span{height:32px;background:url(../images/sprint.gif) no-repeat;font-weight:900;font-size:16px;}
+	a.but span{background-position:left -2px;float:left;display:block;overflow:auto;padding:0 20px 0 40px;}
+	a.but:hover span{background-position:left -34px;height:32px;}
+a.butblue{display:block;float:left;border:1px solid #0065ce;background:url(../images/sprint.gif) left -551px;margin-right:15px;vertical-align:middle;padding:3px 15px;color:#fff;font-size:16px;font-weight:900;}
+a.butblue:hover{text-decoration:none;background:url(../images/sprint.gif) left -580px;}
+a.butBack{float:left;text-decoration:none;}
+/*table style*/
+.tableh{display:none;overflow:hidden;margin:4px 0;width:100%;}
+	.tableh table{width:100%;}
+	.tableh table th{background:#999;color:#fff;text-align:left;line-height:28px;padding-left:10px;}
+	.tableh table td{border-bottom:1px solid #ddd;line-height:28px;padding-left:10px;cursor:default;}
+	.tableh table tr.dtr td{background:#f5f5f5;}
+	.tableh table tr.str td{background:#fafafa;}
+	.tableh table tr.highlight td{background:#ecf1f6;}
+	.tableh table tfoot a{float:none;padding:1px 10px 2px;line-height:normal;font-size:14px;font-weight:normal;display:inline-block;}
+	.tableh p a{float:right;margin-left:10px;}
+	.tableh table td a span.redtext{color:red;}
+/*report table stypel*/
+.tableh2{display:none;overflow:hidden;margin:4px 0;}
+	.tableh2 table{width:100%;}
+	.tableh2 table th{color:#fff;text-align:left;line-height:28px;padding-left:10px;}
+	.tableh2 table td{border-bottom:1px solid #cacaca;border-left:1px solid #cacaca;line-height:28px;padding-left:10px;cursor:default;}
+	.tableh2 table tr.dtr td{background:#eff1f8;}
+	.tableh2 table tr.str td{background:#f8f8f8;}
+	.tableh2 table tr.highlight td{background:#fcffab;}
+	.tableh2 table tfoot a{float:none;padding:1px 10px 2px;line-height:normal;font-size:14px;font-weight:normal;display:inline-block;}
+	.tableh2 p a{float:right;margin-left:10px;}
+.fenpage2{display:block;}
+.fenpage2 a,.fenpage2 span,.fenpage2 input{float:right;margin-left:10px;}
+.textpage2{font:100 14px/23px "Microsoft YaHei", Arial, "宋体", "Segoe UI", sans-serif;width:40px;height:18px;line-height:18px;border:1px solid #c0c0c0;background:url(../images/sprint.gif) repeat-x left -673px;}
+.grayfont2{color:#666;}
+.fshadow2{text-shadow:0px 1px 0px #fff;}
+	
+a.view{background:url(../images/sprint.gif) no-repeat right -160px;padding-right:15px;}
+	a.viewhover{background:url(../images/sprint.gif) no-repeat right -270px;}
+	a.view span,a.viewhover span{color:#55A34A;}
+
+#show{display:block;}
+	#show th{text-align:left;}
+
+.tdw1{width:15%;}
+.tdw2{width:12%;}
+.tdw3{width:20%;}
+
+.Red_Mark {color:#f00;margin:0 5px;}
+.redfont{font-size:16px;font-weight:900;color:#FF7200;}
+.grayfont{color:#666;}
+.error{line-height:20px;display:block;background:url(../images/sprint.gif) no-repeat left -636px;padding-left:18px;height:20px;line-height:20px;color:#d62026;}
+
+.infobox{display:block;overflow:hidden;zoom:1;padding:10px 0;}
+	.infobox div{margin-bottom:10px;}
+	.infobox p{display:block;float:left;margin-right:10px;}
+	/******** 2010.09.26 begin ********/
+	.infobox p.zfont{display:block;clear:both;color:#666;text-indent:70px;}
+	.infobox p.clear{display:block;clear:both;margin-bottom:10px;}
+	.infobox table tr td{padding-bottom:5px;padding-top:5px;}
+	/******** end name:guguoqing ********/
+	.infobox a{display:block;float:left;white-space:nowrap;}
+	.infobox a,.tableh p a{font-size:14px;font-weight:normal;padding:5px 20px;}
+	/******** 2010.09.25 begin ********/
+	.margintop{margin-top:10px;}
+	.margin10{margin:10px;}
+	.padding5{padding:5px 0;}
+	/******** end name:linwei ********/
+	
+	/******** 2010.09.25 begin ********/
+	.linka a{margin-right:10px;word-wrap:break-word; word-break:break-all;white-space:nowrap;}
+	.line {border-bottom:1px dashed #cacaca;margin-bottom:20px;}
+	/******** end name:guguoqing ********/
+
+/******** 2010.09.27 begin ********/
+.userstyle{width:auto;height:20px;padding-left:20px;margin-right:10px;line-height:20px;display:inline-block;background:url(../images/business-contact.gif) no-repeat left 1px;}	
+/******** end name:linwei ********/
+
+/******** 2010.09.28 begin ********/
+.formstyle{margin:5px 0;border-collapse:collapse;}
+.formstyle th,.formstyle td{padding:5px 0;}
+.formstyle th{text-align:right;}
+.formstyle a{float:none;padding:1px 10px 2px;line-height:normal;font-size:14px;font-weight:normal;display:inline-block;}
+.formstyle p{clear:both;float:none;}
+.formstyle input,.formstyle select{margin-right:10px;}
+/******** end name:linwei ********/
+
+/******** 2010.09.30 begin ********/
+.checkimg{width:16px;height:16px;display:inline-block;background:url(../images/check.png) no-repeat;}
+/******** end name:linwei ********/

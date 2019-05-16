@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"/>
+    <title></title>
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/static/js/euditor/themes/default/css/ueditor.css"/>
+    <link rel="stylesheet" href="/static/js/euditor/third-party/codemirror/codemirror.css"/>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/euditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="/static/js/euditor/ueditor.all.js"></script>
+    <script type="text/javascript" src="/static/js/euditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="/static/js/euditor/third-party/zeroclipboard/ZeroClipboard.js"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerForm.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/ligerui.all.js" th:src="@{/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/ligerui.all.js}" ></script>
+    <script type="text/javascript" src="/static/js/official/queryOfficialWebList.js"></script>
+    <script type="text/javascript">
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        var ue = UE.getEditor('editor');
+        UE.Editor.prototype._bkGetActionUrl=UE.Editor.prototype.getActionUrl
+        UE.Editor.prototype.getActionUrl=function(action){
+            if (action == 'uploadimage' || action == 'uploadvideo' || action == 'uploadfile' ) {
+                return "/officialWeb/uploadImage?action="+action ;
+            }else{
+                return this._bkGetActionUrl.call(this, action);
+            }
+        }
+
+    </script>
+</head>
+<body style="padding:6px;">
+    <div>
+        <form id="update_article_form" class="form-horizontal" autocomplete="off"  method="post"
+              enctype="multipart/form-data">
+            <input id="id" name="id"  type="hidden" class="ui-textbox" th:value="${resultData == null ? null : resultData.id}"/>
+            <table>
+                <tr>
+                    <td>
+                        <label >标题：</label>
+                    </td>
+                    <td>
+                        <input id="title" name="title"  type="text" class="ui-textbox" th:value="${resultData == null ? null : resultData.title}" style="width: 500px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >调用平台名称：</label>
+                    </td>
+                    <td>
+                        <input id="terraceName" name="terraceName"  type="text" class="ui-textbox" th:value="${resultData == null ? null : resultData.terraceName}" style="width: 500px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >调用平台编号：</label>
+                    </td>
+                    <td>
+                        <input id="terrace" name="terrace"  type="text" class="ui-textbox" th:value="${resultData == null ? null : resultData.terrace}" style="width: 500px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >语言：</label>
+                    </td>
+                    <td>
+                        <select id="language1" name="language" style="display: block;">
+                            <option value="1" th:selected="${resultData == null ? false:resultData.language == 1}">中文</option>
+                            <option value="2" th:selected="${resultData == null ? false:resultData.language == 2}">英文</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >状态：</label>
+                    </td>
+                    <td>
+                        <select id="status1" name="status" style="display: block;">
+                            <option value="1" th:selected="${resultData == null ? false:resultData.status == 1}">使用</option>
+                            <option value="2" th:selected="${resultData == null ? false:resultData.status == 2}">未使用</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >内容：</label>
+                    </td>
+                    <td>
+                        <textarea id="editor" name="content" type="text/plain" style="width:700px;height:400px;" th:inline="text">
+                    [[${resultData == null ? null:resultData.content }]]</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>封面图片：</label>
+                    </td>
+                    <td>
+                        <input id="coverImgUrl" name="coverImgUrl" type="file"/>
+                        <div class="image_container" id="image_container">
+                            <img id="coverImgView" width="35%" height="25%" class="ui-textarea" validate="{required:true}" th:src="${resultData == null ? null : resultData.coverImgUrl}"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>摘要：</label>
+                    </td>
+                    <td>
+                        <textarea id="abstractDigest" name="abstractDigest" style="width:700px;height:200px;" th:inline="text">[[${resultData == null ? null:resultData.abstractDigest }]]</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label >说明：</label>
+                    </td>
+                    <td>
+                        <input id="remark" name="remark"  type="text" class="ui-textbox" th:value="${resultData == null ? null : resultData.remark}" style="width: 500px;"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var img = $("#coverImgView").attr('src') ;
+        if(!img){
+            $("#image_container").hide() ;
+        }
+    })
+</script>
+</html>
+

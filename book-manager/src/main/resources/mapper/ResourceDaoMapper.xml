@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.manager.dao.security.ResourceDao">
+    <resultMap id="BaseResultMap" type="com.book.manager.domain.security.ResourceEntity">
+        <id property="id" column="resource_id" jdbcType="INTEGER"/>
+        <result property="resourceName" column="resource_name" jdbcType="VARCHAR"/>
+        <result property="resourceUrl" column="resource_string" jdbcType="VARCHAR"/>
+        <result property="resourceType" column="resource_type" jdbcType="VARCHAR"/>
+        <result property="resourceDesc" column="resource_desc" jdbcType="VARCHAR"/>
+        <result property="priority" column="priority" jdbcType="INTEGER"/>
+        <result property="enabled" column="enabled" jdbcType="INTEGER"/>
+        <result property="isSys" column="issys" jdbcType="INTEGER"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="resourceLevel" column="resource_level" jdbcType="INTEGER"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <association property="authorityEntity" javaType="com.book.manager.domain.security.AuthorityEntity" >
+            <result property="id" column="authority_id" jdbcType="INTEGER"/>
+            <result property="authorityDesc" column="authority_desc" jdbcType="VARCHAR"/>
+        </association>
+        <association property="authorityResourceEntity" javaType="com.book.manager.domain.security.AuthorityResourceEntity" >
+            <result property="authorityId" column="authority_id" jdbcType="INTEGER"/>
+        </association>
+    </resultMap>
+    <resultMap id="BaseResultMap1" type="com.book.manager.domain.security.ResourceEntity">
+        <id property="id" column="resource_id" jdbcType="INTEGER"/>
+        <result property="resourceName" column="resource_name" jdbcType="VARCHAR"/>
+        <result property="resourceUrl" column="resource_string" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="resourceLevel" column="resource_level" jdbcType="INTEGER"/>
+        <result property="authorityId" column="authority_id" jdbcType="INTEGER"/>
+        <result property="authorityDesc" column="authority_desc" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap2" type="com.book.manager.domain.security.ResourceTreeEntity">
+        <id property="id" column="resource_id" jdbcType="INTEGER"/>
+        <result property="pid" column="parent_id" jdbcType="INTEGER"/>
+        <result property="text" column="resource_name" jdbcType="VARCHAR"/>
+        <result property="resourceLevel" column="resource_level" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="BASE_COLUMN_LIST">
+        r.resource_id,r.resource_name,r.resource_string,r.resource_type,r.resource_desc,r.priority,r.enabled,r.issys,r.parent_id,r.resource_level,r.create_date
+    </sql>
+
+    <select id="getAllResource" resultMap="BaseResultMap">
+        <!--SELECT-->
+        <!--<include refid="BASE_COLUMN_LIST"/>-->
+        <!--FROM pub_resources r-->
+        SELECT
+            pr.resource_id ,
+            pr.resource_name ,
+            pa.authority_id ,
+            pa.authority_desc ,
+            pr.parent_id ,
+            pr.resource_level
+        FROM pub_resources AS pr
+        LEFT JOIN pub_authorities_resources AS par ON pr.resource_id = par.resource_id
+        LEFT JOIN pub_authorities AS pa ON par.authority_id = pa.authority_id
+    </select>
+
+    <select id="getAllResourceTreeEntity" resultMap="BaseResultMap2">
+        SELECT
+        resource_id ,
+        parent_id ,
+        resource_name ,
+        resource_level
+        FROM pub_resources WHERE resource_level != 0
+    </select>
+
+    <select id="getUrlByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_resources r,pub_users_roles pur,pub_roles_authorities pra,pub_authorities_resources par
+        WHERE pur.role_id=pra.role_id AND pra.authority_id=par.authority_id
+        AND par.resource_id=r.resource_id AND pur.user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_resources r
+        WHERE resource_id = #{resourceId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getResourcesByAuthName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_resources r,pub_authorities a,pub_authorities_resources par
+        WHERE r.resource_id=par.resource_id AND par.authority_id=a.authority_id
+        AND a.authority_name = #{authName,jdbcType=VARCHAR}
+        AND par.ischecked = 1
+    </select>
+
+    <select id="getRoleByResourceID" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_resources u
+    </select>
+
+    <select id="selectByPage" parameterType="com.book.manager.domain.security.ResourceEntity" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_resources r
+        WHERE 1=1
+        <if test="id!=null">
+            AND resource_id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="resourceName!=null and resourceName!=''">
+            AND resource_name = #{resourceName,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceUrl!=null and resourceUrl!=''">
+            AND resource_string = #{resourceUrl,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceType!=null and resourceType!=''">
+            AND resource_type = #{resourceType,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceDesc!=null and resourceDesc!=''">
+            AND resource_desc = #{resourceDesc,jdbcType=VARCHAR}
+        </if>
+        <if test="priority!=null">
+            AND priority = #{priority,jdbcType=INTEGER}
+        </if>
+        <if test="enabled!=null">
+            AND enabled = #{enabled,jdbcType=INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys = #{isSys,jdbcType=INTEGER}
+        </if>
+        ORDER BY resource_id DESC
+    </select>
+
+    <select id="countByPage" parameterType="com.book.manager.domain.security.ResourceEntity" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM pub_resources r
+        WHERE 1=1
+        <if test="id!=null">
+            AND resource_id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="resourceName!=null and resourceName!=''">
+            AND resource_name = #{resourceName,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceUrl!=null and resourceUrl!=''">
+            AND resource_string = #{resourceUrl,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceType!=null and resourceType!=''">
+            AND resource_type = #{resourceType,jdbcType=VARCHAR}
+        </if>
+        <if test="resourceDesc!=null and resourceDesc!=''">
+            AND resource_desc = #{resourceDesc,jdbcType=VARCHAR}
+        </if>
+        <if test="priority!=null">
+            AND priority = #{priority,jdbcType=INTEGER}
+        </if>
+        <if test="enabled!=null">
+            AND enabled = #{enabled,jdbcType=INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys = #{isSys,jdbcType=INTEGER}
+        </if>
+        ORDER BY resource_id DESC
+    </select>
+
+    <insert id="insert" parameterType="com.book.manager.domain.security.ResourceEntity">
+        <selectKey keyProperty="resource_id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() AS resource_id
+        </selectKey>
+        insert into pub_resources (resource_id,parent_id,resource_name,resource_string,resource_type,resource_desc,
+        priority,enabled,issys,resource_level,create_date)
+        values (#{id,jdbcType=INTEGER},#{parentId,jdbcType=INTEGER},#{resourceName,jdbcType=VARCHAR},#{resourceUrl,jdbcType=VARCHAR},#{resourceType,jdbcType=VARCHAR},
+        #{resourceDesc,jdbcType=VARCHAR},#{priority,jdbcType=INTEGER},#{enabled,jdbcType=INTEGER},#{isSys,jdbcType=INTEGER},#{resourceLevel,jdbcType=INTEGER},
+        #{createDate,jdbcType=TIMESTAMP});
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.book.manager.domain.security.ResourceEntity">
+        update pub_resources r
+        <set>
+            <if test="parentId!=null">
+                parent_id = #{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="resourceLevel!=null">
+                resource_level = #{resourceLevel,jdbcType=INTEGER},
+            </if>
+            <if test="resourceName!=null">
+                resource_name = #{resourceName,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceUrl!=null">
+                resource_string = #{resourceUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceType!=null">
+                resource_type = #{resourceType,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceDesc!=null">
+                resource_desc = #{resourceDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="priority!=null">
+                priority = #{priority,jdbcType=INTEGER},
+            </if>
+            <if test="enabled!=null">
+                enabled = #{enabled,jdbcType=INTEGER},
+            </if>
+            <if test="isSys!=null">
+                issys = #{isSys,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE resource_id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="delete" parameterType="com.book.manager.domain.security.ResourceEntity">
+        UPDATE pub_resources SET enabled = 0 WHERE resource_id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByAuthIdFromRelation" parameterType="java.lang.Integer">
+        DELETE FROM pub_authorities_resources
+        WHERE authority_id = #{authId,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insertToRelation" parameterType="com.book.manager.domain.security.AuthorityResourceEntity">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into pub_authorities_resources (id,authority_id,resource_id)
+        values (#{id,jdbcType=INTEGER},#{authorityId,jdbcType=INTEGER},#{resourceId,jdbcType=INTEGER});
+    </insert>
+
+    <select id="getUserMenuByUserName" parameterType="java.lang.String"
+            resultMap="BaseResultMap">
+          SELECT
+            pr.resource_id ,
+            pr.resource_name ,
+            pr.resource_string  ,
+            pr.parent_id ,
+            pr.resource_level ,
+            pra.authority_id ,
+             pa.authority_desc
+         FROM pub_users AS pu , pub_users_roles AS pur ,
+            pub_roles_authorities AS pra , pub_authorities AS pa ,
+            pub_authorities_resources AS par , pub_resources AS pr
+        WHERE pu.user_id = pur.user_id AND pur.role_id = pra.role_id AND pra.issy = 1
+        AND pra.authority_id = pa.authority_id AND pra.authority_id = par.authority_id
+        AND  par.resource_id = pr.resource_id AND pu.user_name = #{userName ,jdbcType=VARCHAR}
+        AND pr.resource_level in(1,2) AND pa.enabled = 1 AND pr.enabled = 1
+    </select>
+
+    <select id="getSubMenu" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+        DISTINCT
+            pr.resource_id ,
+            pr.resource_name ,
+            pr.resource_level ,
+            pa.authority_desc
+        FROM pub_resources AS pr
+        LEFT JOIN pub_authorities_resources AS par ON pr.resource_id = par.resource_id
+        LEFT JOIN pub_authorities AS pa ON par.authority_id = pa.authority_id
+        WHERE pr.parent_id = #{parentId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getResourceByAuthId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      SELECT
+        pr.resource_id
+      FROM pub_authorities AS pa
+      LEFT JOIN pub_authorities_resources AS par ON pa.authority_id = par.authority_id
+      LEFT JOIN pub_resources AS pr ON par.resource_id = pr.resource_id
+      WHERE pa.authority_id = #{authId,jdbcType=INTEGER} AND par.ischecked = 1
+    </select>
+
+    <select id="getResourceByAuthIdDoNotCareChecked" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+        pr.resource_id
+        FROM pub_authorities AS pa
+        LEFT JOIN pub_authorities_resources AS par ON pa.authority_id = par.authority_id
+        LEFT JOIN pub_resources AS pr ON par.resource_id = pr.resource_id
+        WHERE pa.authority_id = #{authId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getAllAuthorityAndResource" resultMap="BaseResultMap1">
+        SELECT
+            pa.authority_id ,
+            pa.authority_desc,
+            pr.resource_id ,
+            pr.resource_name ,
+            pr.resource_string  ,
+            pr.parent_id ,
+            pr.resource_level
+        FROM pub_authorities AS pa , pub_authorities_resources AS par,
+            pub_resources AS pr
+        WHERE pa.authority_id = par.authority_id
+        AND par.resource_id = pr.resource_id
+        AND pa.enabled = 1 AND pr.enabled = 1
+    </select>
+
+    <select id="getResourceFather" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+          pr2.parent_id
+        FROM pub_resources AS pr1
+        LEFT JOIN pub_resources AS pr2 ON pr1.parent_id = pr2.resource_id
+        WHERE pr1.parent_id = #{parentId} LIMIT 1
+    </select>
+
+</mapper>
