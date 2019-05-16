@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.manager.dao.security.UserDao">
+    <resultMap id="BaseResultMap" type="com.book.manager.domain.security.UserEntity">
+        <id property="id" column="user_id" jdbcType="INTEGER"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="user_password" jdbcType="VARCHAR"/>
+        <result property="userAccount" column="user_account" jdbcType="VARCHAR"/>
+        <result property="userDesc" column="user_desc" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="isSys" column="issys" jdbcType="INTEGER"/>
+        <result property="userLanguage" column="user_language" jdbcType="VARCHAR"/>
+        <!--<collection property="roles" ofType="com.us.example.domain.SysRole">-->
+        <!--<result column="name" property="name"/>-->
+        <!--</collection>-->
+
+    </resultMap>
+    <sql id="BASE_COLUMN_LIST">
+        user_id,user_name,user_password,user_account,user_desc,status,issys,user_language
+    </sql>
+
+    <select id="getUserByUserAccount" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_users u
+        where user_account= #{userAccount,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_users r
+        where user_id  = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--<select id="findUsers" parameterType="java.util.Map" resultMap="BaseResultMap">
+		select
+		<include refid="BASE_COLUMN_LIST"/>
+		from pub_users u
+        where 1=1
+        <if test="id!=null">
+          AND user_id= #{id,jdbcType= INTEGER}
+        </if>
+        <if test="userName!=null">
+          AND user_name= #{userName,jdbcType= VARCHAR}
+        </if>
+        <if test="userDesc!=null">
+          AND user_desc= #{userDesc,jdbcType= VARCHAR}
+        </if>
+        <if test="userAccount!=null">
+          AND user_account= #{userAccount,jdbcType= VARCHAR}
+        </if>
+        <if test="enabled!=null">
+          AND enabled= #{enabled,jdbcType= INTEGER}
+        </if>
+        <if test="isSys!=null">
+          AND issys= #{isSys,jdbcType= INTEGER}
+        </if>
+	</select>-->
+
+    <select id="selectByPage" parameterType="com.book.manager.domain.security.UserEntity" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_users u
+        where 1=1
+        <if test="id!=null">
+            AND user_id= #{id,jdbcType= INTEGER}
+        </if>
+        <if test="userName!=null and userName!=''">
+            AND user_name= #{userName,jdbcType= VARCHAR}
+        </if>
+        <if test="userDesc!=null and userDesc!=''">
+            AND user_desc= #{userDesc,jdbcType= VARCHAR}
+        </if>
+        <if test="userAccount!=null and userAccount!=''">
+            AND user_account= #{userAccount,jdbcType= VARCHAR}
+        </if>
+        <if test="status!=null">
+            AND status= #{status,jdbcType= INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys= #{isSys,jdbcType= INTEGER}
+        </if>
+        <if test="userLanguage!=null">
+            AND user_language= #{userLanguage,jdbcType= VARCHAR}
+        </if>
+        ORDER BY user_id DESC
+    </select>
+
+    <select id="countByPage" parameterType="com.book.manager.domain.security.UserEntity" resultType="java.lang.Integer">
+        select COUNT(*)
+        from pub_users u
+        where 1=1
+        <if test="id!=null">
+            AND user_id= #{id,jdbcType= INTEGER}
+        </if>
+        <if test="userName!=null and userName!=''">
+            AND user_name= #{userName,jdbcType= VARCHAR}
+        </if>
+        <if test="userDesc!=null and userDesc!=''">
+            AND user_desc= #{userDesc,jdbcType= VARCHAR}
+        </if>
+        <if test="userAccount!=null and userAccount!=''">
+            AND user_account= #{userAccount,jdbcType= VARCHAR}
+        </if>
+        <if test="status!=null">
+            AND status= #{status,jdbcType= INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys= #{isSys,jdbcType= INTEGER}
+        </if>
+        <if test="userLanguage!=null">
+            AND user_language= #{userLanguage,jdbcType= VARCHAR}
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="com.book.manager.domain.security.UserEntity">
+        <selectKey keyProperty="user_id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() as user_id
+        </selectKey>
+        insert into pub_users (user_id,user_name,user_password,user_desc,user_account,status,issys,user_language)
+        values (#{id,jdbcType= INTEGER},#{userName,jdbcType= VARCHAR},#{password,jdbcType= VARCHAR},#{userDesc,jdbcType= VARCHAR},
+        #{userAccount,jdbcType= VARCHAR},#{status,jdbcType= INTEGER},#{isSys,jdbcType= INTEGER},,#{userLanguage,jdbcType= VARCHAR});
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.book.manager.domain.security.UserEntity">
+        UPDATE pub_users
+        <set>
+            <if test="userName!=null">
+                user_name= #{userName,jdbcType= VARCHAR},
+            </if>
+            <if test="userDesc!=null">
+                user_desc= #{userDesc,jdbcType= VARCHAR},
+            </if>
+            <if test="userAccount!=null">
+                user_account= #{userAccount,jdbcType= VARCHAR},
+            </if>
+            <if test="status!=null">
+                status= #{status,jdbcType= INTEGER},
+            </if>
+            <if test="isSys!=null">
+                issys= #{isSys,jdbcType= INTEGER},
+            </if>
+            <if test="userLanguage!=null">
+                user_language= #{userLanguage,jdbcType= VARCHAR},
+            </if>
+        </set>
+        WHERE user_id= #{id,jdbcType= INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="com.book.manager.domain.security.UserEntity">
+        DELETE FROM pub_users
+        WHERE 1=1
+        <if test="id!=null">
+            AND user_id= #{id,jdbcType= INTEGER}
+        </if>
+        <if test="userName!=null and userName!=''">
+            AND user_name= #{userName,jdbcType= VARCHAR}
+        </if>
+        <if test="userDesc!=null and userDesc!=''">
+            AND user_desc= #{userDesc,jdbcType= VARCHAR}
+        </if>
+        <if test="userAccount!=null and userAccount!=''">
+            AND user_account= #{userAccount,jdbcType= VARCHAR}
+        </if>
+        <if test="status!=null">
+            AND status= #{status,jdbcType= INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys= #{isSys,jdbcType= INTEGER}
+        </if>
+        <if test="userLanguage!=null">
+            user_language= #{userLanguage,jdbcType= VARCHAR},
+        </if>
+        <!--<if test="ids!=null">
+            AND authority_id IN
+            <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">
+                ${item}
+            </foreach>
+        </if>-->
+    </delete>
+
+    <!--<select id="getAuthoritiesByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="BASE_COLUMN_LIST"/>
+		from pub_users u
+        LEFT JOIN sys_role_user sru on u.id= sru.Sys_User_id
+        LEFT JOIN Sys_Role r on sru.Sys_Role_id=r.id
+        where user_name= #{username}
+	</select>-->
+    <update id="updatePassword" parameterType="com.book.manager.domain.security.UserEntity">
+        UPDATE pub_users SET user_password = #{password,jdbcType=VARCHAR}
+        WHERE user_name = #{username,jdbcType=VARCHAR}
+    </update>
+
+    <select id="findByUserName" parameterType="com.book.manager.domain.security.UserEntity" resultMap="BaseResultMap">
+        SELECT
+          id
+        FROM pub_users
+        WHERE user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

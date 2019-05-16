@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.manager.dao.security.AuthorityDao">
+    <resultMap id="BaseResultMap" type="com.book.manager.domain.security.AuthorityEntity">
+        <id property="id" column="authority_id" jdbcType="INTEGER"/>
+        <result property="authorityName" column="authority_name" jdbcType="VARCHAR"/>
+        <result property="authorityDesc" column="authority_desc" jdbcType="VARCHAR"/>
+        <result property="enabled" column="enabled" jdbcType="INTEGER"/>
+        <result property="isSys" column="issys" jdbcType="INTEGER"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <association property="resourceEntity" javaType="com.book.manager.domain.security.ResourceEntity">
+            <id property="id" column="resource_id" jdbcType="INTEGER" />
+            <result property="resourceLevel" column="resource_level"/>
+        </association>
+        <association property="roleAuthorityEntity" javaType="com.book.manager.domain.security.RoleAuthorityEntity">
+            <id property="id" column="id" />
+        </association>
+    </resultMap>
+    <resultMap id="BaseResultMap1" type="com.book.manager.domain.security.AuthorityEntity">
+        <id property="id" column="authority_id" jdbcType="INTEGER"/>
+        <result property="resourceLevel" column="resource_level"/>
+        <result property="resourceId" column="resource_id"/>
+    </resultMap>
+    <sql id="BASE_COLUMN_LIST">
+        a.authority_id,a.authority_name,a.authority_desc,a.enabled,a.issys,a.create_date
+    </sql>
+
+    <select id="getAllAuthoritys" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_authorities a WHERE enabled = 1
+        ORDER BY authority_id DESC
+        <!--LEFT JOIN sys_role_user sru on u.id= sru.Sys_User_id
+            LEFT JOIN Sys_Role r on sru.Sys_Role_id=r.id
+            where username= #{username}-->
+    </select>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_authorities a
+        where authority_id= #{authorityId,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" parameterType="com.book.manager.domain.security.AuthorityEntity" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_COLUMN_LIST"/>
+        from pub_authorities a
+        WHERE 1=1
+        <if test="id!=null">
+            AND authority_id= #{id,jdbcType=INTEGER}
+        </if>
+        <if test="authorityName!=null and authorityName!=''">
+            AND authority_name= #{authorityName,jdbcType=VARCHAR}
+        </if>
+        <if test="authorityDesc!=null and authorityDesc!=''">
+            AND authority_desc= #{authorityDesc,jdbcType=VARCHAR}
+        </if>
+        <if test="enabled!=null">
+            AND enabled= #{enabled,jdbcType=INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys= #{isSys,jdbcType=INTEGER}
+        </if>
+        ORDER BY authority_id DESC
+    </select>
+
+    <select id="countByPage" parameterType="com.book.manager.domain.security.AuthorityEntity" resultType="java.lang.Integer">
+        select COUNT(*)
+        from pub_authorities a
+        WHERE 1=1
+        <if test="id!=null">
+            AND authority_id= #{id,jdbcType=INTEGER}
+        </if>
+        <if test="authorityName!=null and authorityName!=''">
+            AND authority_name= #{authorityName,jdbcType=VARCHAR}
+        </if>
+        <if test="authorityDesc!=null and authorityDesc!=''">
+            AND authority_desc= #{authorityDesc,jdbcType=VARCHAR}
+        </if>
+        <if test="enabled!=null">
+            AND enabled= #{enabled,jdbcType=INTEGER}
+        </if>
+        <if test="isSys!=null">
+            AND issys= #{isSys,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <select id="getAuthoritiesByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_authorities a,pub_roles_authorities pra,pub_users_roles pur,pub_users u
+        WHERE a.authority_id=pra.authority_id and pra.role_id=pur.role_id
+        and pur.user_id=u.user_id and u.user_account = #{userAccount,jdbcType=VARCHAR}
+        and pra.issy = 1
+    </select>
+
+    <select id="getAuthoritiesByRoleId" parameterType="java.util.Map" resultMap="BaseResultMap1">
+        SELECT
+        DISTINCT
+            pa.authority_id ,
+            pr.resource_id ,
+            pr.resource_level
+        FROM pub_roles_authorities AS pra , pub_authorities AS pa  ,
+         pub_authorities_resources AS par , pub_resources AS pr
+        WHERE pra.role_id = #{roleId} AND pra.authority_id = pa.authority_id
+        AND pra.authority_id = par.authority_id AND par.resource_id = pr.resource_id
+        AND pa.enabled = 1
+        <if test="issy !=null">
+            AND pra.issy = #{issy}
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="com.book.manager.domain.security.AuthorityEntity">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        INSERT INTO pub_authorities(authority_id,authority_name,authority_desc,enabled,issys,create_date)
+        VALUES (#{id,jdbcType=INTEGER},#{authorityName,jdbcType=VARCHAR},#{authorityDesc,jdbcType=VARCHAR}
+        ,#{enabled,jdbcType=INTEGER},#{isSys,jdbcType=INTEGER},#{createDate,jdbcType=TIMESTAMP})
+    </insert>
+
+    <insert id="updateByPrimaryKeySelective" parameterType="com.book.manager.domain.security.AuthorityEntity">
+        UPDATE pub_authorities
+        <set>
+            <if test="id!=null">
+                authority_id= #{id,jdbcType=INTEGER},
+            </if>
+            <if test="authorityName!=null and authorityName!=''">
+                authority_name= #{authorityName,jdbcType=VARCHAR},
+            </if>
+            <if test="authorityDesc!=null and authorityDesc!=''">
+                authority_desc= #{authorityDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="enabled!=null">
+                enabled= #{enabled,jdbcType=INTEGER},
+            </if>
+            <if test="isSys!=null">
+                issys= #{isSys,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE authority_id= #{id,jdbcType=INTEGER}
+    </insert>
+
+    <update id="delete" parameterType="com.book.manager.domain.security.AuthorityEntity">
+        UPDATE pub_authorities SET enabled = 0 WHERE authority_id= #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+        DELETE FROM pub_roles_authorities
+        WHERE role_id = #{roleId,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insertRoleAuth" parameterType="com.book.manager.domain.security.RoleAuthorityEntity">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        INSERT INTO pub_roles_authorities(id,role_id,authority_id,issy)
+        VALUES (#{id,jdbcType=INTEGER},#{roleId,jdbcType=INTEGER},#{authorityId,jdbcType=INTEGER},1)
+    </insert>
+
+    <select id="getAuthorityPublic" resultMap="BaseResultMap">
+        SELECT
+          authority_id
+        FROM pub_authorities
+        WHERE authority_name LIKE ('ROLE_ALL_PUBLIC%')
+    </select>
+
+    <insert id="batchInsertRoleAuthority"  useGeneratedKeys="true" parameterType="java.util.List">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO pub_roles_authorities( role_id , authority_id , issy , create_date)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            ( #{item.roleId} , #{item.authorityId} , #{item.issy} , #{item.createDate})
+        </foreach>
+    </insert>
+
+    <update id="updateRoleAuthority" parameterType="com.book.manager.domain.security.RoleAuthorityEntity">
+        UPDATE pub_roles_authorities set issy = #{issy} WHERE role_id = #{roleId} AND authority_id = #{authorityId}
+    </update>
+
+    <select id="getRoleAuthority" parameterType="com.book.manager.domain.security.RoleAuthorityEntity"
+            resultType="com.book.manager.domain.security.RoleAuthorityEntity">
+        SELECT id , issy FROM pub_roles_authorities WHERE role_id = #{roleId,jdbcType=INTEGER}  AND authority_id = #{authorityId,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertRoleAuthority" parameterType="com.book.manager.domain.security.RoleAuthorityEntity" useGeneratedKeys="true" keyColumn="id">
+        INSERT INTO pub_roles_authorities(role_id , authority_id , issy)
+        VALUES( #{roleId} , #{authorityId} , #{issy})
+    </insert>
+
+    <insert id="giveResourcesToAuth" parameterType="java.util.List">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO pub_authorities_resources(authority_id , resource_id , create_date)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            ( #{item.authorityId} , #{item.resourceId} , #{item.createDate} )
+        </foreach>
+    </insert>
+
+    <update id="updateAuthoritiesResourcesNotChecked" parameterType="java.util.List">
+        UPDATE pub_authorities_resources SET ischecked = 0
+        WHERE ischecked = 1 AND
+        <foreach collection="list" item="item" index="index" separator="OR">
+            ( authority_id = #{item.authorityId} AND resource_id = #{item.resourceId} )
+        </foreach>
+    </update>
+
+    <update id="updateAuthoritiesResourcesChecked" parameterType="java.util.List">
+        UPDATE pub_authorities_resources SET ischecked = 1
+        WHERE ischecked = 0 AND
+        <foreach collection="list" item="item" index="index" separator="OR">
+            ( authority_id = #{item.authorityId} AND resource_id = #{item.resourceId} )
+        </foreach>
+    </update>
+
+    <select id="queryResourceId" resultType="java.lang.Integer">
+        SELECT  resource_id FROM pub_authorities_resources WHERE resource_id IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")" >
+          #{item}
+        </foreach>
+    </select>
+
+
+</mapper>

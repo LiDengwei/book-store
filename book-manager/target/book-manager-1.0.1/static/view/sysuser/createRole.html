@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="/static/js/sysuser/roleList.js" type="text/javascript"></script>
+
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery-validation/jquery.metadata.js"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/jquery-validation/messages_cn.js"></script>
+    <script src="/static/js/jQueryLigerUI1.3.3/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <style type="text/css">
+        #div_edit{width: 900px; margin: 10px 10px 10px 10px;}
+        #div_edit td{vertical-align: top;padding: 5px 0 0 0;}
+        #btn_back_index {margin: 0 0 9px 0;}
+        #btn_saveAndNext{margin: 9px 0 0 0;}
+        /* 图片信息 */
+        #tbl_image td{vertical-align: top;padding: 5px 0 0 0;}
+        #img_view {width: 200px;height: 150px;border: 1px solid #000;}
+        #btn_choose {width: 67px;}
+    </style>
+</head>
+<div id="div_edit">
+    <!--<div>-->
+        <!--<input id="btn_back_index" class='l-button' type="button" value="返回首页" />-->
+    <!--</div>-->
+    <div id="div_label_edit">
+        <div id="div_label_content_0">
+            <form id="form1">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="roleName">角色名称：</label>
+                        </td>
+                        <td>
+                            <input id="roleName"  name="roleName" th:value="${role == null ? null:role.roleName}" type="text" class="ui-textbox"    />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="desc">角色描述：</label>
+                        </td>
+                        <td>
+                            <textarea id="desc" name="desc" th:text="${role == null ? null:role.desc}" class="ui-textarea"  ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            是否被禁用：
+                        </td>
+                        <td>
+                            <select id="enabled" name="enabled" >
+                                <option value="1">正常</option>
+                                <option value="0">禁用</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            是否是超级权限：
+                        </td>
+                        <td>
+                            <select id="isSys" name="isSys" >
+                                <option value="0">不是</option>
+                                <option value="1">是</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+    <!--<div align="left" >-->
+        <!--<input id="btn_saveAndNext" style="width: 100px;" class='l-button' type="button" value="保存" />-->
+    <!--</div>-->
+</div>
+<input id="hide_id" type="hidden" name="id" th:value="${role == null ? null:role.id}" />
+<input id="hide_enabled" type="hidden" th:value="${role == null ? null:role.enabled}" />
+<input id="hide_isSys" type="hidden" th:value="${role == null ? null:role.isSys}"/>
+</html>
+

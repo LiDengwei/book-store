@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.manager.dao.security.ManagerLogDao">
+    <resultMap id="BaseResultMap" type="com.book.manager.domain.security.ManagerLogEntity">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="manager" column="manager" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="info" column="info" jdbcType="VARCHAR"/>
+        <result property="logType" column="logType" jdbcType="INTEGER"/>
+        <result property="createAt" column="createAt" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="updateAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="BASE_COLUMN_LIST">
+        r.id,r.manager,r.username,r.info,r.logType,r.createAt,r.updateAt
+    </sql>
+
+    <insert id="insert" parameterType="com.book.manager.domain.security.ManagerLogEntity">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into pub_managerlog (id,manager,username,info,logType,createAt,updateAt)
+        values (#{id,jdbcType=INTEGER},#{manager,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{info,jdbcType=VARCHAR},
+        #{logType,jdbcType=INTEGER},#{createAt,jdbcType=TIMESTAMP},#{updateAt,jdbcType=TIMESTAMP});
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.book.manager.domain.security.ManagerLogEntity">
+        update pub_managerlog r
+        <set>
+            <if test="manager!=null">
+                manager = #{manager,jdbcType=VARCHAR},
+            </if>
+            <if test="username!=null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="info!=null">
+                info = #{info,jdbcType=VARCHAR},
+            </if>
+            <if test="logType!=null">
+                logType = #{logType,jdbcType=INTEGER},
+            </if>
+            <if test="updateAt!=null">
+                updateAt = #{updateAt,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="delete" parameterType="java.lang.Integer">
+        DELETE FROM pub_managerlog WHERE id = #{value,jdbcType=INTEGER}
+    </update>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_managerlog r
+        WHERE id = #{value,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" parameterType="com.book.manager.domain.security.ManagerLogEntity" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BASE_COLUMN_LIST"/>
+        FROM pub_managerlog r
+        WHERE 1=1
+        <if test="id!=null">
+            AND id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="manager!=null and manager!=''">
+            AND manager = #{manager,jdbcType=VARCHAR}
+        </if>
+        <if test="username!=null and username!=''">
+            AND username = #{username,jdbcType=VARCHAR}
+        </if>
+        <if test="info!=null and info!=''">
+            AND info like "%"#{info,jdbcType=VARCHAR}"%"
+        </if>
+        <if test="logType!=null">
+            AND logType = #{logType,jdbcType=INTEGER}
+        </if>
+        ORDER BY id DESC
+    </select>
+
+    <select id="countByPage" parameterType="com.book.manager.domain.security.ManagerLogEntity" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM pub_managerlog r
+        WHERE 1=1
+        <if test="id!=null">
+            AND id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="manager!=null and manager!=''">
+            AND manager = #{manager,jdbcType=VARCHAR}
+        </if>
+        <if test="username!=null and username!=''">
+            AND username = #{username,jdbcType=VARCHAR}
+        </if>
+        <if test="info!=null and info!=''">
+            AND info like "%"#{info,jdbcType=VARCHAR}"%"
+        </if>
+        <if test="logType!=null">
+            AND logType = #{logType,jdbcType=INTEGER}
+        </if>
+        ORDER BY id DESC
+    </select>
+
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns>
+    <auth>
+        <!-- 过滤登录状态的接口 -->
+        <url>/official/preQueryOfficialWeb</url>
+        <url>/official/getofficials</url>
+        <url>/official/queryOfficialWeb</url>
+
+    </auth>
+    <rate_limit>
+        <!--<url>/user/balance</url>-->
+    </rate_limit>
+    <unlock>
+        <url>tx/offer_cancel</url>
+    </unlock>
+</patterns>

@@ -1,0 +1,17 @@
+com\book\web\Swagger2.class
+com\book\web\webUtil\Config.class
+com\book\web\dubbo\DubboConfig.class
+com\book\web\webUtil\ResourceMessageUtil.class
+com\book\web\webUtil\EmailUtil.class
+com\book\web\BaseController.class
+com\book\web\webUtil\HexEncodeUtil.class
+com\book\web\interceptor\SecurityInterceptor.class
+com\book\web\interceptor\WebAppConfigurer.class
+com\book\web\webUtil\PopupAuthenticator.class
+com\book\web\exceptions\GlobalExceptionHandler.class
+com\book\web\context\LoginContext.class
+com\book\web\context\LoginContextHolder.class
+com\book\web\SecretWebApplication.class
+com\book\web\webUtil\DES.class
+com\book\web\context\LoginContext$LogTypeEnum.class
+com\book\web\webUtil\FileUtil.class

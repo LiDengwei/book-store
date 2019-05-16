@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 引入属性文件 -->
+    <context:property-placeholder location="classpath:config.properties" />
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="book-manager" />
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <!-- 多注册中心配置，竖号分隔表示同时连接多个不同注册中心，同一注册中心的多个集群地址用逗号分隔 -->
+    <!-- 注册中心地址 -->
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" />
+
+    <!-- 监控中心配置，protocol="registry"，表示从注册中心发现监控中心地址 -->
+    <dubbo:monitor protocol="registry"/>
+    <!--  消费方缺省配置，当ReferenceConfig某属性没有配置时，采用此缺省值，可选。 -->
+    <dubbo:consumer timeout="30000" check="false" />
+
+    <!-- 支付即藏宝子系统服务接口引用 -->
+    <import resource="dubbo-reference.xml" />
+
+
+</beans>

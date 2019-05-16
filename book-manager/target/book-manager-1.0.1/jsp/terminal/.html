@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<div>
+			<input id="btn_add" type="button" value="新增" />
+			<hr />
+			<table border="1" cellspacing="0" cellpadding="0" >
+				<tr>
+					<td>标识</td>
+					<td>图片</td>
+					<td>外部链接</td>
+					<td>链接功能</td>
+					<td>功能标识</td>
+					<td>操作</td>
+				</tr>
+				<tr th:each="advert : ${adverts}">
+					<td th:text="${advert.id}">11</td>
+					<td ><img th:src="${advert.showUrl}" width="200px" height="100px" /></td>
+					<td ><a th:if="${advert.outUrl != null and advert.outUrl != ''}" th:href="@{${advert.outUrl}}" th:text="${advert.outUrl}" ></a></td>
+					<td th:text="${advert.skipType}"></td>
+					<td th:text="${advert.funId}"></td>
+					<td>
+						<input th:id="${'btn_update_' + advert.id}" type="button" value="修改" />&nbsp;
+						<input th:id="${'btn_delete_' + advert.id}" type="button" value="删除" />&nbsp;
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

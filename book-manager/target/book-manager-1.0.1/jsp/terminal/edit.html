@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<style type="text/css">
+			#div_edit{width: 900px; margin: 10px 10px 10px 10px;}
+			#div_edit td{vertical-align: top;padding: 5px 0 0 0;}
+			#btn_back_index {margin: 0 0 9px 0;}
+			#btn_saveAndNext{margin: 9px 0 0 0;}
+			/* 图片信息 */
+			#tbl_image td{vertical-align: top;padding: 5px 0 0 0;}
+			#img_view {width: 200px;height: 150px;border: 1px solid #000;}
+			#btn_choose {width: 67px;}
+		</style>
+	</head>
+	<div id="div_edit">
+		<div>
+			<input id="btn_back_index" class='l-button' type="button" value="返回首页" />
+		</div>
+		<div id="div_label_edit">
+			<ul>
+				<li ><a href="#div_label_content_0">基础信息</a></li>
+				<li ><a href="#div_label_content_1">图片信息</a></li>
+				<li ><a href="#div_label_content_2">标签信息</a></li>
+			</ul>
+			<div id="div_label_content_0">
+				<form >
+					<table>
+						<tr>
+							<td width="70px;">商品名称：</td>
+							<td><input id="txt_shortTitle" name="shortTitle" th:value="${terminal == null ? '' : terminal.shortTitle}" /></td>
+						</tr>
+						<tr>
+							<td>长标题：</td>
+							<td><input id="txt_longTitle" name="longTitle" th:value="${terminal == null ? '' : terminal.longTitle}" /></td>
+						</tr>
+						<tr>
+							<td>品牌：</td>
+							<td>
+								<select id="sel_brand" name="brandId" ></select>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>价格：</td>
+							<td><input id="txt_price" name="price" th:value="${terminal == null ? '' : terminal.price}" /></td>
+						</tr>
+						<tr>
+							<td style="vertical-align: baseline">简介：</td>
+							<td>
+								<script type="text/plain" id="scp_summary"></script>
+							</td>
+						</tr>
+					</table>
+				</form>
+				
+			</div>
+			<div id="div_label_content_1">
+				<table id="tbl_image">
+					<tr>
+						<td>智惠机图片：</td>
+						<td>
+							<img id="img_view" th:src="${terminal == null ? '' : terminal.showDistinctUrl}" />
+							<input id="btn_choose" name="myfile" type="file" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="div_label_content_2">
+				<div>
+					<select id="sel_label"></select>
+					<input id="btn_add_labelFun" class='l-button' type="button" value="新增标签" />
+					<input id="btn_save_labelFun" style="width: 100px;" class='l-button' type="button" value="保存选中的标签" />
+				</div>
+				<div id="div_labelFun">
+					<ul></ul>
+				</div>
+			</div>
+		</div>
+		<div align="right" >
+			<input id="btn_saveAndNext" style="width: 100px;" class='l-button' type="button" value="保存并下一步" />
+		</div>
+	</div>
+	<input id="hide_id" type="hidden" name="id" th:value="${terminal == null ? '' : terminal.id}" />
+	<input id="hide_brandId" type="hidden" th:value="${ (terminal != null and terminal.brand != null ) ? terminal.brand.id : ''}" />
+	<input id="hide_imageUrl" type="hidden" name="imageUrl" th:value="${terminal == null ? '' : terminal.distinctUrl}"/>
+	<input id="hide_summary" type="hidden" th:value="${terminal == null ? '' : terminal.summary}" />
+</html>

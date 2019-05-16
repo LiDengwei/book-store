@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd"
+       default-autowire="byName">
+
+    <context:property-placeholder location="classpath:conf/db.properties,classpath:conf/param.properties" />
+
+
+    <bean id="jedisClient" class="com.book.util.redis.JedisClient">
+        <constructor-arg name="address" value="${redis.host}"/>
+        <constructor-arg name="port" value="${redis.port}"/>
+    </bean>
+
+    <!-- 自动搜索@Controller标注的类 -->
+    <context:component-scan base-package="com.book.service" />
+
+
+    <import resource="classpath:/spring/spring-dubbo-provider.xml" />
+    <import resource="classpath:/spring/spring-dubbo-consumer.xml" />
+    <import resource="classpath:/spring/spring-mybatis.xml" />
+    <!-- TCC Transaction -->
+    <!--<import resource="classpath:tcc-transaction.xml" />-->
+
+</beans>
