@@ -2,219 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8a5fead-6071-4c50-bbec-b805d1b1e33d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/book-manager/src/main/java/com/book/manager/HelloSpringbootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/application-security-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/application-security-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/BookWebApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/BookWebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/Swagger2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/Swagger2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/config/DBconfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/config/DBconfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/config/DBconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/config/DBconfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/controller/security/UserControllerSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/controller/security/UserControllerSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/controller/security/UserControllerSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/controller/security/UserControllerSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/util/ResourceMessageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/util/ResourceMessageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/util/ResourceMessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/com/book/manager/util/ResourceMessageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/dubbo/dubbo-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/dubbo/dubbo-consumer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/classes/logback-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/HdrHistogram-2.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/asm-5.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/asm-commons-5.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/azure-keyvault-core-0.8.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/azure-storage-6.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/com.book-service-common-util-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/com.offical-service-common-util-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/commons-beanutils-1.9.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/commons-cli-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/compress-lzf-1.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/elasticsearch-2.4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/gson-2.8.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/hibernate-validator-5.3.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/hppc-0.7.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/httpasyncclient-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/httpclient-4.5.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/httpcore-4.4.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/httpcore-nio-4.4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/httpmime-4.5.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jackson-dataformat-cbor-2.8.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jackson-dataformat-smile-2.8.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jackson-dataformat-yaml-2.8.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/java-sdk-3.18.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/javassist-3.21.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jcl-over-slf4j-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jedis-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/joda-time-2.9.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jsr166e-1.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jxmpp-core-0.4.2-beta1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/jxmpp-util-cache-0.4.2-beta1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/log4j-api-2.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/log4j-core-2.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/logback-classic-1.1.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/logback-core-1.1.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-analyzers-common-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-backward-codecs-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-core-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-grouping-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-highlighter-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-join-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-memory-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-misc-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-queries-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-queryparser-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-sandbox-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-spatial-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-spatial3d-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/lucene-suggest-5.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/qiniu-java-sdk-7.0.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/radar-lib-1.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/securesm-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/service-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/service-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/slf4j-log4j12-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-core-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-extensions-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-im-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-java7-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-resolver-javax-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-sasl-javax-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/smack-tcp-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/snakeyaml-1.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spatial4j-0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-aop-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-autoconfigure-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-starter-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-starter-data-redis-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-starter-logging-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-starter-tomcat-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-boot-starter-web-1.5.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-context-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-context-support-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-data-commons-1.13.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-data-keyvalue-1.2.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-data-redis-1.8.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-expression-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-hateoas-0.23.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-orm-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-oxm-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-tx-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-web-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/spring-webmvc-4.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/t-digest-3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/tomcat-annotations-api-8.5.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/tomcat-embed-core-8.5.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/tomcat-embed-el-8.5.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/tomcat-embed-websocket-8.5.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/xml-apis-1.4.01.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/book-manager-1.0.1/WEB-INF/lib/xpp3-1.1.4c.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/BookWebApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/BookWebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/Swagger2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/Swagger2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/config/DBconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/config/DBconfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/controller/security/UserControllerSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/controller/security/UserControllerSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/util/ResourceMessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-manager/target/classes/com/book/manager/util/ResourceMessageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-manager/target/notice-manager.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-api/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-api/target/service-api-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-api/target/service-api-1.0-SNAPSHOT-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-api/target/service-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-api/target/service-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-config/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-config/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-config/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-config/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-config/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-config/target/service-common-config-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-config/target/service-common-config-1.0-SNAPSHOT-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-config/target/service-common-config-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-config/target/service-common-config-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-parent/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-util/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-util/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-util/target/service-common-util-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-util/target/service-common-util-1.0-SNAPSHOT-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-common-util/target/service-common-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-common-util/target/service-common-util-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/classes/com/book/service/impl/user/UserServiceApiImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/classes/com/book/service/impl/user/UserServiceApiImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/lib/okhttp-2.7.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/lib/okio-1.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-common-config-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-common-config-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-common-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/lib/service-common-util-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/service-impl-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/service-impl-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/service-impl/target/service-impl.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/service-impl/target/service-impl.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/book-web.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/book-web.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/aspectjrt-1.8.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/aspectjweaver-1.8.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/classmate-1.3.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/elasticsearch-2.4.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/gson-2.8.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/hibernate-validator-5.3.4.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/httpcore-4.4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jackson-core-2.8.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jackson-databind-2.8.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jackson-dataformat-cbor-2.8.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jackson-dataformat-smile-2.8.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jackson-dataformat-yaml-2.8.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jboss-logging-3.3.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jcl-over-slf4j-1.7.24.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/joda-time-2.9.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/jul-to-slf4j-1.7.24.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-analyzers-common-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-backward-codecs-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-core-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-grouping-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-highlighter-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-join-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-memory-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-misc-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-queries-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-queryparser-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-sandbox-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-spatial-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-spatial3d-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/lucene-suggest-5.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/service-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/lib/service-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/service-common-config-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/lib/service-common-config-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/service-common-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/lib/service-common-util-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/slf4j-api-1.7.24.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/slf4j-log4j12-1.7.24.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-aop-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-beans-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-autoconfigure-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-data-redis-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-logging-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-test-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-tomcat-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-starter-web-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-test-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-boot-test-autoconfigure-1.5.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-context-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-context-support-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-core-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-data-commons-1.13.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-data-keyvalue-1.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-data-redis-1.8.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-expression-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-oxm-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-test-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-tx-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-web-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/spring-webmvc-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/tomcat-embed-core-8.5.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/tomcat-embed-el-8.5.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/lib/tomcat-embed-websocket-8.5.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-web/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/book-web/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/secret-web-all.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/secret-web-all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -254,11 +43,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book-web/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -335,19 +133,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloSpringbootApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-manager/src/main/java/com/book/manager/HelloSpringbootApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -397,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/book-web/src/main/java/com/book/web/interceptor/WebAppConfigurer.java" />
         <option value="$PROJECT_DIR$/book-web/src/main/java/com/book/web/webUtil/FileUtil.java" />
         <option value="$PROJECT_DIR$/book-service/service-common-util/src/main/java/com/book/model/other/DES.java" />
         <option value="$PROJECT_DIR$/book-manager/src/main/java/com/book/manager/util/ActionEnterSubject.java" />
@@ -448,6 +232,7 @@
         <option value="$PROJECT_DIR$/book-service/service-common-util/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/book-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -668,7 +453,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -823,7 +608,7 @@
       <workItem from="1557978669879" duration="3448000" />
       <workItem from="1558059311940" duration="129000" />
       <workItem from="1558059822676" duration="6020000" />
-      <workItem from="1558073044683" duration="5499000" />
+      <workItem from="1558073044683" duration="5774000" />
     </task>
     <task id="LOCAL-00001" summary="初始">
       <created>1557990050773</created>
@@ -832,14 +617,22 @@
       <option name="project" value="LOCAL" />
       <updated>1557990050773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="初始">
+      <created>1558084412087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558084412087</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45709000" />
+    <option name="totallyTimeSpent" value="45984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -858,11 +651,11 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32958803" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.72659177" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.29026216" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4082397" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28455943" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28455943" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897195" />
@@ -926,13 +719,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/book-manager/src/main/java/com/book/manager/base/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-101">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book-manager/src/main/java/com/book/manager/base/LoginContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1269,6 +1055,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
