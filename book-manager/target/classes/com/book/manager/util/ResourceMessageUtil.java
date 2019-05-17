@@ -12,9 +12,6 @@ import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Created by daniel on 2017/12/27.
- */
 public class ResourceMessageUtil {
 
     private static Map<String,String> cnMap = new ConcurrentHashMap<String,String>();

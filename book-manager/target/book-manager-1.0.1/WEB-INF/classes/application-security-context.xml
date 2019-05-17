@@ -13,17 +13,15 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 引入属性文件 -->
-	<context:property-placeholder location="classpath:config.properties" />
-
-	<b:bean id="jedisClient" class="com.book.util.redis.JedisClient">
-		<b:constructor-arg name="address" value="${redis.host}"/>
-		<b:constructor-arg name="port" value="${redis.port}"/>
-	</b:bean>
+	<!--<context:property-placeholder location="classpath:config.properties" />-->
+	<!--<b:bean id="jedisClient" class="com.book.util.redis.JedisClient">-->
+		<!--<b:constructor-arg name="address" value="${redis.host}"/>-->
+		<!--<b:constructor-arg name="port" value="${redis.port}"/>-->
+	<!--</b:bean>-->
 
 
 	<!-- <global-method-security pre-post-annotations="enabled" /> -->
 	<!-- 引入属性文件 -->
-	<!--<context:property-placeholder location="classpath:config.properties" />-->
 	<b:import resource="classpath:dubbo/dubbo-consumer.xml"/>
 
 	 <!--<bean id="mappingJacksonHttpMessageConverter"-->

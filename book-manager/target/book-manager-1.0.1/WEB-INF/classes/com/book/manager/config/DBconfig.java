@@ -9,9 +9,6 @@ import org.springframework.core.env.Environment;
 
 import java.beans.PropertyVetoException;
 
-/**
- * Created by daniel on 18/1/18.
- */
 @Configuration
 public class DBconfig {
     @Autowired

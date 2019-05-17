@@ -83,7 +83,6 @@ public class UserControllerSecurity extends ParentController {
     /**
      * 切换语言
      * @param langrage CN:中文,EN:英文
-     * @author daniel 2018/08/09
      * @return
      */
     @RequestMapping(value = "/language",method = {RequestMethod.POST,RequestMethod.GET})

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -7,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
+        <version>1.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -22,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jdk.version>1.8</jdk.version>
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>4.2.5.RELEASE</spring.version>
         <surefire.version>2.13</surefire.version>
         <spring.security.version>3.0.2.RELEASE</spring.security.version>
         <thymeleaf.version>2.0.18</thymeleaf.version>
@@ -157,12 +156,9 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
-                    <warName>notice-manager</warName>
-                    <warSourceIncludes>
-                        WEB-INF/web.xml,WEB-INF/classes/**,css/**,DatePicker/**,images/**,static/**,ueditor/**,jsp/**,*.html,WEB-INF/classes/dubbo/*.xml,WEB-INF/lib/service-*
-                    </warSourceIncludes>
-                    <warSourceExcludes>WEB-INF/classes/config.properties,WEB-INF/classes/jdbc.properties,META-INF/**,
-                    </warSourceExcludes>
+                    <warName>book-manager</warName>
+                    <warSourceIncludes>WEB-INF/web.xml,WEB-INF/classes/**,css/**,DatePicker/**,images/**,static/**,ueditor/**,jsp/**,*.html,WEB-INF/classes/dubbo/*.xml,WEB-INF/lib/service-*</warSourceIncludes>
+                    <warSourceExcludes>WEB-INF/classes/config.properties,WEB-INF/classes/jdbc.properties,META-INF/**,</warSourceExcludes>
                 </configuration>
             </plugin>
 
@@ -271,17 +267,11 @@
             <version>2.2.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-
         <!-- redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
@@ -343,13 +333,6 @@
         </dependency>
         <!-- ueditor end -->
 
-        <!-- qi niu -->
-        <!-- 七牛架包开始 -->
-        <dependency>
-            <groupId>com.qiniu</groupId>
-            <artifactId>qiniu-java-sdk</artifactId>
-            <version>[7.0.0, 7.0.99]</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp -->
         <dependency>
             <groupId>com.squareup.okhttp</groupId>
@@ -361,13 +344,6 @@
             <groupId>com.squareup.okio</groupId>
             <artifactId>okio</artifactId>
             <version>1.6.0</version>
-        </dependency>
-
-        <!-- 又拍云 jar -->
-        <dependency>
-            <groupId>com.upyun</groupId>
-            <artifactId>java-sdk</artifactId>
-            <version>3.18</version>
         </dependency>
 
 
@@ -745,20 +721,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--  微软云存储 -->
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-storage</artifactId>
-            <version>6.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.book</groupId>
-            <artifactId>service-common-util</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
         <!-- Spring Framework End -->
-
     </dependencies>
 </project>
